@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 import { useState } from "react";
 import { SelectList } from "react-native-dropdown-select-list";
 
+import MinToHrs from "./components/MinToHrs";
+
 export default function App() {
   // const [counter, setCounter] = useState(0);
   const [selected, setSelected] = useState();
@@ -22,6 +24,7 @@ export default function App() {
         search={false}
         maxHeight={80}
       />
+      <MinToHrs />
       <StatusBar style="auto" />
     </View>
   );

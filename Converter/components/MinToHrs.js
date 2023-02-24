@@ -8,13 +8,14 @@ export default function MinToHrs() {
   // const [hrs, setHrs] = useState("");
 
   const [number, setNumber] = useState(0);
-  const [invert, setInvert] = useState(false);
+  const [invert, setInvert] = useState(true);
 
   const reset = () => {
     setNumber(0);
   };
 
-  const onInvert = () => {
+  const onInvert = () => {};
+  const convert = () => {
     setInvert((current) => !current);
   };
   return (
@@ -30,6 +31,9 @@ export default function MinToHrs() {
           keyboardType="numeric"
           editable={invert}
         />
+        <Pressable style={styles.button} onPress={convert}>
+          <Text style={styles.text}>Convert</Text>
+        </Pressable>
         <TextInput
           style={[styles.input, { backgroundColor: invert ? "silver" : null }]}
           placeholder="Hrs"
@@ -40,14 +44,9 @@ export default function MinToHrs() {
           editable={!invert}
         />
       </View>
-      <View style={styles.flex}>
-        <Pressable style={styles.button} onPress={onInvert}>
-          <Text style={styles.text}>Invert</Text>
-        </Pressable>
-        <Pressable style={styles.button}>
-          <Text style={styles.text}>Reset</Text>
-        </Pressable>
-      </View>
+      <Pressable style={[styles.button, { backgroundColor: "skyblue" }]}>
+        <Text style={styles.text}>Reset</Text>
+      </Pressable>
     </View>
   );
 }

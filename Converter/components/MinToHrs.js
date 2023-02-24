@@ -22,7 +22,7 @@ export default function MinToHrs() {
       <Text>Min To Hrs</Text>
       <View>
         <TextInput
-          style={styles.input}
+          style={[styles.input, { backgroundColor: !invert ? "silver" : null }]}
           placeholder="Min"
           maxLength={7}
           onChange={setNumber}
@@ -31,7 +31,7 @@ export default function MinToHrs() {
           editable={invert}
         />
         <TextInput
-          style={styles.input}
+          style={[styles.input, { backgroundColor: invert ? "silver" : null }]}
           placeholder="Hrs"
           maxLength={7}
           onChange={setNumber}
